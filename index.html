@@ -20,7 +20,7 @@
     :root {
       --bg: #0f0809;
       --surface: #1a0d0f;
-      --border: #41514e73;;
+      --border: #41514e73;
       --accent: #696a70;
       --accent-light: #85b0a9;
       --accent-light2: #85b0a97a;
@@ -31,9 +31,16 @@
       --gold: #afcec9;
       --white-piece: #fff6f7;
       --black-piece: #111214;
+      --gift-black: #0d0f10;
+      --gift-black-soft: #171b1d;
+      --gift-ribbon: #85b0a9;
     }
 
-    body {  
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
       overflow-x: hidden;
       overflow-y: scroll;
       background: var(--bg);
@@ -45,11 +52,10 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      overflow-x: hidden;
     }
 
     body::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
+      display: none;
     }
 
     body::before {
@@ -64,100 +70,93 @@
     }
 
     .gate-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background:
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background:
         radial-gradient(circle at 20% 20%, rgba(200,169,107,0.08), transparent 30%),
         radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 25%),
         rgba(0, 0, 0, 0);
-    backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
     }
 
     .gate-card {
-    width: 100%;
-    max-width: 420px;
-    background: rgba(0, 0, 0, 0);
-    border: 1px solid var(--border);
-    box-shadow: 10px 10px 30px var(--accent-light2);
-    padding: 28px 24px;
-    text-align: center;
+      width: 100%;
+      border-radius: 12px;
+      max-width: 420px;
+      background: rgba(0, 0, 0, 0);
+      border: 1px solid var(--border);
+      box-shadow: 10px 10px 30px var(--accent-light2);
+      padding: 28px 24px;
+      text-align: center;
     }
 
     .gate-eyebrow {
-    font-size: 9px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--accent-light);
-    margin-bottom: 14px;
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 14px;
     }
 
     .gate-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 34px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 10px;
-    }
-
-    .gate-text {
-    font-size: 12px;
-    line-height: 1.8;
-    color: var(--muted);
-    margin-bottom: 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 10px;
     }
 
     .gate-input-row {
-    display: flex;
+      display: flex;
     }
 
     .gate-input {
-    flex: 1;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-right: none;
-    color: var(--text);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    padding: 14px 16px;
-    outline: none;
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-right: none;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      padding: 14px 16px;
+      outline: none;
     }
 
     .gate-input:focus {
-    border-color: var(--accent-light);
+      border-color: var(--accent-light);
     }
 
     .gate-input::placeholder {
-    color: #7f8b91;
+      color: #7f8b91;
     }
 
     .gate-btn {
-    background: var(--accent);
-    border: 1px solid var(--accent);
-    color: #fff;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 14px 18px;
-    cursor: pointer;
-    transition: background 0.2s;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: background 0.2s;
     }
 
     .gate-btn:hover {
-    background: var(--accent-light);
+      background: var(--accent-light);
     }
 
     .gate-error {
-    min-height: 16px;
-    margin-top: 12px;
-    font-size: 11px;
-    color: #d58e98;
-    letter-spacing: 1px;
+      min-height: 16px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: #d58e98;
+      letter-spacing: 1px;
     }
 
     .container {
@@ -390,7 +389,6 @@
       border-right: none;
       color: var(--text);
       font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
       padding: 14px 16px;
       outline: none;
       letter-spacing: 2px;
@@ -481,6 +479,147 @@
       width: 100%;
     }
 
+    .gift-screen {
+      display: none;
+      width: 100%;
+      justify-content: center;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .gift-screen.visible {
+      display: flex;
+    }
+
+    .gift-card {
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(16, 17, 18, 0.96), rgba(8, 9, 10, 0.98));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 24px;
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.45),
+        0 0 40px rgba(133,176,169,0.08);
+    }
+
+    .gift-kicker {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 12px;
+    }
+
+    .gift-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 7vw, 46px);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .gift-text {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .gift-button {
+      margin-top: 50px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .gift-box {
+      position: relative;
+      display: inline-block;
+      width: 110px;
+      height: 110px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, var(--gift-black-soft), var(--gift-black));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.45),
+        0 0 24px rgba(133,176,169,0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gift-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 12px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, rgba(133,176,169,0.95), rgba(88,126,119,0.95));
+      box-shadow: 0 0 12px rgba(133,176,169,0.18);
+    }
+
+    .gift-box::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 12px;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, rgba(133,176,169,0.95), rgba(88,126,119,0.95));
+      box-shadow: 0 0 12px rgba(133,176,169,0.18);
+    }
+
+    .gift-lid {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 126px;
+      height: 28px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #1b1f21, #101214);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.28);
+    }
+
+    .gift-lid::before,
+    .gift-lid::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      width: 22px;
+      height: 16px;
+      border: 4px solid var(--gift-ribbon);
+      border-bottom: none;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .gift-lid::before {
+      left: calc(50% - 22px);
+      transform: rotate(-18deg);
+      transform-origin: bottom right;
+    }
+
+    .gift-lid::after {
+      right: calc(50% - 22px);
+      transform: rotate(18deg);
+      transform-origin: bottom left;
+    }
+
+    .gift-button:hover .gift-box,
+    .gift-button:active .gift-box {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.5),
+        0 0 30px rgba(133,176,169,0.18);
+    }
+
     .success-screen {
       display: none;
       flex-direction: column;
@@ -555,13 +694,6 @@
       color: var(--accent-light);
       font-style: italic;
       font-weight: 400;
-    }
-
-    .success-intro {
-      max-width: 420px;
-      font-size: 13px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.9);
     }
 
     .preview-strip {
@@ -694,7 +826,8 @@
       }
 
       .success-hero-inner,
-      .date-reveal {
+      .date-reveal,
+      .gift-card {
         padding: 18px;
       }
 
@@ -703,125 +836,149 @@
         min-height: 200px;
         height: 200px;
       }
+
+      .gift-box {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .gift-lid {
+        width: 116px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="gate-screen" id="gateScreen">
     <div class="gate-card">
-        <div class="gate-eyebrow">Alleen voor Miles</div>
-        <h1 class="gate-title">Voer je code in</h1>
+      <div class="gate-eyebrow">Alleen voor Miles</div>
+      <h1 class="gate-title">Voer je code in</h1>
 
-        <div class="gate-input-row">
+      <div class="gate-input-row">
         <input
-            type="password"
-            id="gateInput"
-            class="gate-input"
-            placeholder="Code"
-            autocomplete="off"
-            spellcheck="false"
+          type="password"
+          id="gateInput"
+          class="gate-input"
+          placeholder="Code"
+          autocomplete="off"
+          spellcheck="false"
         />
         <button id="gateBtn" class="gate-btn">Open</button>
-        </div>
+      </div>
 
-        <div class="gate-error" id="gateError"></div>
+      <div class="gate-error" id="gateError"></div>
     </div>
-  </div> 
+  </div>
 
   <div id="app" style="display:none;">
     <div class="container">
 
-    <div class="puzzle-area" id="puzzleArea">
-      <div class="header">
-        <div class="eyebrow">29 april &middot; twee jaar samen</div>
-        <h1 class="title">Hey Miles. <br><em>Vind de winnende combinatie.</em></h1>
-        <div class="date-tag">Wit aan zet &middot; Mat in 2</div>
-      </div>
+      <div class="puzzle-area" id="puzzleArea">
+        <div class="header">
+          <div class="eyebrow">29 april &middot; twee jaar samen</div>
+          <h1 class="title">Hey Miles. <br><em>Vind de winnende combinatie.</em></h1>
+          <div class="date-tag">Wit aan zet &middot; Mat in 2</div>
+        </div>
 
-      <div class="board-wrapper">
-        <div class="board-label">Wit aan zet</div>
-        <div class="board-area">
-          <div class="board-row">
-            <div class="coord-ranks" id="rankLabels"></div>
-            <div>
-              <div id="chessboard" class="board"></div>
-              <div class="coord-row" id="fileLabels"></div>
+        <div class="board-wrapper">
+          <div class="board-label">Wit aan zet</div>
+          <div class="board-area">
+            <div class="board-row">
+              <div class="coord-ranks" id="rankLabels"></div>
+              <div>
+                <div id="chessboard" class="board"></div>
+                <div class="coord-row" id="fileLabels"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="selected-display" id="selectedDisplay"></div>
-        <div class="status-line" id="statusLine">Eerste zet: vind de sleutelzet.</div>
-        <div class="move-announcement" id="moveAnnouncement"></div>
-      </div>
-
-      <div class="input-section">
-        <div class="input-label">Voer je zet in (algebraïsche notatie)</div>
-        <div class="input-row">
-          <input class="move-input" id="moveInput" type="text" placeholder="bijv. Qg8" autocomplete="off" autocorrect="off" spellcheck="false" />
-          <button class="submit-btn" id="submitBtn">Check →</button>
-        </div>
-        <div class="error-msg" id="errorMsg"></div>
-      </div>
-
-      <div class="move-log" id="moveLog">
-        <strong>Zetten:</strong><br>
-        Nog geen zetten.
-      </div>
-    </div>
-
-    <div class="success-screen" id="successScreen">
-      <div class="success-hero">
-        <img src="assets/banner.jpeg" alt="Banner afbeelding van Thermen Soesterberg">
-        <div class="success-overlay"></div>
-        <div class="success-hero-inner">
-          <div class="success-kicker">Je hebt gewonnen!!</div>
-          <h2 class="success-title">Een kleine <em>sneak peek</em> van jouw cadeau</h2>
-          </p>
-        </div>
-      </div>
-
-      <div class="preview-strip">
-        <div class="preview-photo-card">
-          <img src="assets/bosbad.png" alt="Bosbad bij Thermen Soesterberg">
-          <div class="preview-caption">Bosbad</div>
+          <div class="selected-display" id="selectedDisplay"></div>
+          <div class="status-line" id="statusLine">Eerste zet: vind de sleutelzet.</div>
+          <div class="move-announcement" id="moveAnnouncement"></div>
         </div>
 
-        <div class="preview-photo-card">
-          <img src="assets/grotsauna.png" alt="Grotsauna bij Thermen Soesterberg">
-          <div class="preview-caption">Grotsauna</div>
-        </div>
-
-        <div class="preview-photo-card">
-          <img src="assets/sterrenbad.png" alt="Sterrenbad bij Thermen Soesterberg">
-          <div class="preview-caption">Sterrenbad</div>
-        </div>
-      </div>
-
-      <div class="date-reveal">
-        <div class="dr-eyebrow">Jouw cadeau</div>
-        <div class="dr-what">Thermen Soesterberg</div>
-        <div class="dr-sub">Soesterberg</div>
-
-        <div class="dr-details">
-          <div class="dr-row">
-            <span class="dr-key">Wanneer</span>
-            <span class="dr-val">5 mei 2026</span>
+        <div class="input-section">
+          <div class="input-label">Voer je zet in (algebraïsche notatie)</div>
+          <div class="input-row">
+            <input class="move-input" id="moveInput" type="text" placeholder="bijv. Qg8" autocomplete="off" autocorrect="off" spellcheck="false" />
+            <button class="submit-btn" id="submitBtn">Check →</button>
           </div>
-          <div class="dr-row">
-            <span class="dr-key">Tijd</span>
-            <span class="dr-val">16:00 uur</span>
-          </div>
-          <div class="dr-row">
-            <span class="dr-key">Waar</span>
-            <span class="dr-val">Soesterberg, Utrecht</span>
+          <div class="error-msg" id="errorMsg"></div>
+        </div>
+
+        <div class="move-log" id="moveLog">
+          <strong>Zetten:</strong><br>
+          Nog geen zetten.
+        </div>
+      </div>
+
+      <div class="gift-screen" id="giftScreen">
+        <div class="gift-card">
+          <div class="gift-kicker">Goed gedaan!</div>
+          <h3 class="gift-title">Klik op het cadeau om je prijs te openen</h3>
+
+          <button class="gift-button" id="giftButton" aria-label="Open het cadeau">
+            <span class="gift-box">
+              <span class="gift-lid"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="success-screen" id="successScreen">
+        <div class="success-hero">
+          <img src="assets/banner.jpeg" alt="Banner afbeelding van Thermen Soesterberg">
+          <div class="success-overlay"></div>
+          <div class="success-hero-inner">
+            <div class="success-kicker">Je hebt gewonnen!!</div>
+            <h2 class="success-title">Een kleine <em>sneak peek</em> van jouw cadeau</h2>
           </div>
         </div>
 
-        <div class="dr-note">
-          Alles is al geregeld door mij. Jij hoeft alleen maar te komen opdagen.
+        <div class="preview-strip">
+          <div class="preview-photo-card">
+            <img src="assets/bosbad.png" alt="Bosbad bij Thermen Soesterberg">
+            <div class="preview-caption">Bosbad</div>
+          </div>
+
+          <div class="preview-photo-card">
+            <img src="assets/grotsauna.png" alt="Grotsauna bij Thermen Soesterberg">
+            <div class="preview-caption">Grotsauna</div>
+          </div>
+
+          <div class="preview-photo-card">
+            <img src="assets/sterrenbad.png" alt="Sterrenbad bij Thermen Soesterberg">
+            <div class="preview-caption">Sterrenbad</div>
+          </div>
+        </div>
+
+        <div class="date-reveal">
+          <div class="dr-eyebrow">Jouw cadeau</div>
+          <div class="dr-what">Thermen Soesterberg</div>
+          <div class="dr-sub">Soesterberg</div>
+
+          <div class="dr-details">
+            <div class="dr-row">
+              <span class="dr-key">Wanneer</span>
+              <span class="dr-val">5 mei 2026</span>
+            </div>
+            <div class="dr-row">
+              <span class="dr-key">Tijd</span>
+              <span class="dr-val">16:00 uur</span>
+            </div>
+            <div class="dr-row">
+              <span class="dr-key">Waar</span>
+              <span class="dr-val">Soesterberg, Utrecht</span>
+            </div>
+          </div>
+
+          <div class="dr-note">
+            Alles is al geregeld door mij. Jij hoeft alleen maar te komen opdagen.
+          </div>
         </div>
       </div>
-    </div>
+
     </div>
   </div>
 
@@ -841,26 +998,31 @@
     const gateError = document.getElementById('gateError');
     const app = document.getElementById('app');
 
+    const giftScreen = document.getElementById('giftScreen');
+    const giftButton = document.getElementById('giftButton');
+    const successScreen = document.getElementById('successScreen');
+    const puzzleArea = document.getElementById('puzzleArea');
+
     function unlockPage() {
-    gateScreen.style.display = 'none';
-    app.style.display = 'block';
-    scrollToTopSmooth();
+      gateScreen.style.display = 'none';
+      app.style.display = 'block';
+      scrollToTopSmooth();
     }
 
     function checkAccessCode() {
-    const entered = gateInput.value.trim();
+      const entered = gateInput.value.trim();
 
-    if (entered === ACCESS_CODE) {
+      if (entered === ACCESS_CODE) {
         unlockPage();
-    } else {
+      } else {
         gateError.textContent = 'Onjuiste code.';
         gateInput.value = '';
-    }
+      }
     }
 
     gateBtn.addEventListener('click', checkAccessCode);
     gateInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') checkAccessCode();
+      if (e.key === 'Enter') checkAccessCode();
     });
 
     const INITIAL_BOARD = [
@@ -1129,10 +1291,16 @@
     }
 
     function finishPuzzle() {
-      document.getElementById('puzzleArea').style.display = 'none';
-      document.getElementById('successScreen').classList.add('visible');
+      puzzleArea.style.display = 'none';
+      giftScreen.classList.add('visible');
       scrollToTopSmooth();
     }
+
+    giftButton.addEventListener('click', () => {
+      giftScreen.classList.remove('visible');
+      successScreen.classList.add('visible');
+      scrollToTopSmooth();
+    });
 
     async function check() {
       if (game.isAnimating) return;
@@ -1188,6 +1356,7 @@
 
           await new Promise(resolve => setTimeout(resolve, 700));
           finishPuzzle();
+          game.isAnimating = false;
         } else {
           errorMsg.textContent = 'Nog niet. Zoek de matzet.';
           moveInput.value = '';
