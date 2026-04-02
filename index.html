@@ -2,15 +2,19 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>♟ voor Miles</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     .move-input,
-    .gate-input {
-      font-size: 16px;
+    .gate-input,
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+      -webkit-text-size-adjust: 100%;
     }
 
     :root {
@@ -698,9 +702,8 @@
 <body>
   <div class="gate-screen" id="gateScreen">
     <div class="gate-card">
-        <div class="gate-eyebrow">alleen voor miles</div>
+        <div class="gate-eyebrow">Alleen voor Miles</div>
         <h1 class="gate-title">Voer je code in</h1>
-        <p class="gate-text">Deze kleine verrassing opent alleen met de juiste code.</p>
 
         <div class="gate-input-row">
         <input
