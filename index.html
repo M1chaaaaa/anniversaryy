@@ -20,9 +20,10 @@
     :root {
       --bg: #0f0809;
       --surface: #1a0d0f;
-      --border: #2e1419;
+      --border: #41514e73;;
       --accent: #696a70;
       --accent-light: #85b0a9;
+      --accent-light2: #85b0a97a;
       --light-sq: rgb(135, 141, 148);
       --dark-sq: rgb(52, 55, 58);
       --text: #e4ecf0;
@@ -34,6 +35,7 @@
 
     body {  
       overflow-x: hidden;
+      overflow-y: scroll;
       background: var(--bg);
       color: var(--text);
       font-family: 'JetBrains Mono', monospace;
@@ -44,6 +46,10 @@
       justify-content: center;
       padding: 20px;
       overflow-x: hidden;
+    }
+
+    body::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
     }
 
     body::before {
@@ -68,16 +74,16 @@
     background:
         radial-gradient(circle at 20% 20%, rgba(200,169,107,0.08), transparent 30%),
         radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 25%),
-        rgba(10, 8, 9, 0.96);
+        rgba(0, 0, 0, 0);
     backdrop-filter: blur(8px);
     }
 
     .gate-card {
     width: 100%;
     max-width: 420px;
-    background: rgba(26, 13, 15, 0.96);
+    background: rgba(0, 0, 0, 0);
     border: 1px solid var(--border);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    box-shadow: 10px 10px 30px var(--accent-light2);
     padding: 28px 24px;
     text-align: center;
     }
