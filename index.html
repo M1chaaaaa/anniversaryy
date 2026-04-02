@@ -22,12 +22,12 @@
       --surface: #1a0d0f;
       --border: #2e1419;
       --accent: #696a70;
-      --accent-light: #C8A96B;
+      --accent-light: #85b0a9;
       --light-sq: rgb(135, 141, 148);
       --dark-sq: rgb(52, 55, 58);
       --text: #e4ecf0;
       --muted: #b6c1c6;
-      --gold: #c8a96b;
+      --gold: #afcec9;
       --white-piece: #fff6f7;
       --black-piece: #111214;
     }
@@ -451,7 +451,8 @@
     }
 
     .move-log {
-      margin-top: 12px;
+      margin-top: 0px;
+      margin-bottom: 10px;
       width: 100%;
       background: rgba(255,255,255,0.02);
       border: 1px solid var(--border);
@@ -745,10 +746,6 @@
         <div class="selected-display" id="selectedDisplay"></div>
         <div class="status-line" id="statusLine">Eerste zet: vind de sleutelzet.</div>
         <div class="move-announcement" id="moveAnnouncement"></div>
-        <div class="move-log" id="moveLog">
-          <strong>Zetten:</strong><br>
-          Nog geen zetten.
-        </div>
       </div>
 
       <div class="input-section">
@@ -758,6 +755,11 @@
           <button class="submit-btn" id="submitBtn">Check →</button>
         </div>
         <div class="error-msg" id="errorMsg"></div>
+      </div>
+
+      <div class="move-log" id="moveLog">
+        <strong>Zetten:</strong><br>
+        Nog geen zetten.
       </div>
     </div>
 
@@ -818,6 +820,13 @@
   </div>
 
   <script>
+    function scrollToTopSmooth() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
     const ACCESS_CODE = '1308';
 
     const gateScreen = document.getElementById('gateScreen');
@@ -829,6 +838,7 @@
     function unlockPage() {
     gateScreen.style.display = 'none';
     app.style.display = 'block';
+    scrollToTopSmooth();
     }
 
     function checkAccessCode() {
@@ -1115,6 +1125,7 @@
     function finishPuzzle() {
       document.getElementById('puzzleArea').style.display = 'none';
       document.getElementById('successScreen').classList.add('visible');
+      scrollToTopSmooth();
     }
 
     async function check() {
