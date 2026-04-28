@@ -901,7 +901,7 @@
         <div class="input-section">
           <div class="input-label">Voer je zet in (algebraïsche notatie)</div>
           <div class="input-row">
-            <input class="move-input" id="moveInput" type="text" placeholder="bijv. Qg8" autocomplete="off" autocorrect="off" spellcheck="false" />
+            <input class="move-input" id="moveInput" type="text" placeholder="bijv. Ka1" autocomplete="off" autocorrect="off" spellcheck="false" />
             <button class="submit-btn" id="submitBtn">Check →</button>
           </div>
           <div class="error-msg" id="errorMsg"></div>
@@ -1277,7 +1277,7 @@
 
     async function goToPhase2() {
       statusLine.textContent = 'Zwart denkt na...';
-      moveInput.placeholder = 'bijv. Nf7';
+      moveInput.placeholder = 'bijv. Ka1';
       errorMsg.textContent = '';
 
       await new Promise(resolve => setTimeout(resolve, 900));
